@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete picture</title>
+</head>
+<body>
+<h1>Delete picture</h1>
+<h2>Are you sure?</h2>
+<p>
+    <a href="/pictures">Picture list</a>
+</p>
+<form th:action="@{/delete-picture}" th:object="${picture}" method="post">
+    <input th:type="hidden" name="id" th:field="*{id}">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td th:text="${picture.name}"></td>
+        </tr>
+        <tr>
+            <td>Picture:</td>
+            <td th:text="${picture.url_link}"></td>
+        </tr>
+        <tr>
+            <td>Category:</td>
+            <td th:text="${picture.category}"></td>
+        </tr>
+        <tr>
+            <td>Width:</td>
+            <td th:text="${picture.width}"></td>
+        </tr>
+        <tr>
+            <td>height:</td>
+            <td th:text="${picture.height}"></td>
+        </tr>
+        <tr>
+            <td>Material:</td>
+            <td th:text="${picture.material}"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td th:text="${picture.description}"></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td th:text="${picture.price}"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Delete picture"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
